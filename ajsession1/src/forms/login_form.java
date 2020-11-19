@@ -5,6 +5,7 @@
  */
 package forms;
 
+import java.awt.Color;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,10 +16,16 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import static javafx.scene.paint.Color.color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -38,14 +45,21 @@ public class login_form extends Application{
        
        VBox vBox1 = new VBox();                         // Creating a vBox1
        vBox1.getChildren().addAll(lb1, lb2);            // adding both labels to the vBox1
-       //vBox1.setPadding(new Insets(20));
+       
        vBox1.setMargin(lb1, new Insets(0, 20, 20, 20));  // setting the moargin of the lb1
-              vBox1.setMargin(lb2, new Insets(20, 20, 20, 20)); // Setting the margin for lb2;
+              vBox1.setMargin(lb2, new Insets(3, 20, 20, 20)); // Setting the margin for lb2;
                 
       VBox vBox2= new VBox();                                 // Creating vBox2                  
        vBox2.getChildren().addAll(txt1, pass,btn);            // adding these elements to the vBox2
-       txt1.setStyle("-fx-stroke-width: 10;");                // setting the width of the label
-       // vBox2.setPadding(new Insets(20));
+       lb1.setFont(Font.font("Courier", FontWeight.BOLD, FontPosture.ITALIC, 20)); 
+       lb2.setFont(Font.font("Courier", FontWeight.BOLD, FontPosture.ITALIC, 20));// setting the width of the labelT
+  
+      lb1.setStyle("-fx-Border-color: red;");
+lb2.setStyle("-fx-Border-color: red;");
+
+      
+    
+       
        vBox2.setMargin(txt1, new Insets(0, 20, 20, 20));       // spacing all around the labels
        vBox2.setMargin(pass, new Insets(10, 20, 20, 20));
        vBox2.setMargin(btn, new Insets(0, 20, 20, 20));
@@ -66,7 +80,7 @@ public class login_form extends Application{
        vBox3.getChildren().addAll(hBox2, hBox1);        //    adding both hboxs to the final vBox 
        vBox3.setMargin(hBox2, new Insets(20, 20, 20, 20));
        vBox3.setAlignment(Pos.CENTER);                      
-       vBox3.setStyle("-fx-Background-color: cyan ;" );       // setting the background color to cyan
+       vBox3.setStyle("-fx-Background-color: cyan ; -fx-Border-color: red;" );       // setting the background color to cyan
       
       
       Scene scene = new Scene(vBox3, 400, 400);             // adding the last vbox to a scene
